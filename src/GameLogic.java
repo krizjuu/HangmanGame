@@ -73,7 +73,7 @@ public class GameLogic {
         return (pickedWord.length() == checkIfCorrect);
     }
 
-    //Metoden der kører spillet.
+    //Metoden der starter hele spillet
     static void startGame(Scanner input, String pickedWord, List<Character> Guess) {
         int wrongCounter = 0;
 
@@ -84,6 +84,7 @@ public class GameLogic {
             //Hvis man har gættet forkert 6 gange taber man spillet
             if (wrongCounter >= 6) {
                 System.out.println("You lost the game");
+                System.out.println("The word was " + pickedWord);
                 break;
             }
 
@@ -97,7 +98,7 @@ public class GameLogic {
             }
 
             System.out.println("Try and guess the word");
-            System.out.println("If you dont know the word just press tab");
+            System.out.println("If you dont know the word just press enter");
             String playerGuesses = input.nextLine();
             if(playerGuesses.equals(pickedWord)) {
                 System.out.println("Congratulations you win!");
